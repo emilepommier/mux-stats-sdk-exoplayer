@@ -84,8 +84,12 @@ import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.ErrorMessageProvider;
 import com.google.android.exoplayer2.util.EventLogger;
 import com.google.android.exoplayer2.util.Util;
+import com.mux.stats.sdk.core.events.IEvent;
+import com.mux.stats.sdk.core.events.IEventDispatcher;
+import com.mux.stats.sdk.core.events.IEventListener;
 import com.mux.stats.sdk.core.model.CustomerPlayerData;
 import com.mux.stats.sdk.core.model.CustomerVideoData;
+import com.mux.stats.sdk.core.util.MuxLogger;
 import com.mux.stats.sdk.muxstats.MuxStatsExoPlayer;
 
 import java.net.CookieHandler;
@@ -683,6 +687,29 @@ public class PlayerActivity extends Activity
         }
       }
       return Pair.create(0, errorString);
+    }
+  }
+
+  private class DebugListener implements IEventListener {
+
+    @Override
+    public void setId(int i) {
+
+    }
+
+    @Override
+    public int getId() {
+      return 0;
+    }
+
+    @Override
+    public void handle(IEvent event) {
+      Log.v("MUXDebugListener", event.getType());
+    }
+
+    @Override
+    public void flush() {
+
     }
   }
 

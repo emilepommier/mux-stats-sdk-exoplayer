@@ -59,6 +59,9 @@ android {
         r2_8_0_ads {
             java.srcDirs = ['./src/r2_8_0/java']
         }
+        r2_9_6 {
+            java.srcDirs = ['./src/r2_9_6/java']
+        }
     }
 
     flavorDimensions 'api'
@@ -94,6 +97,9 @@ android {
         r2_8_0_ads {
             dimension  'api'
         }
+        r2_9_6 {
+            dimension  'api'
+        }
     }
 
     build << {
@@ -125,6 +131,8 @@ dependencies {
     r2_8_0Api 'org.checkerframework:checker-qual:2.5.0'
     r2_8_0_adsApi 'com.google.android.exoplayer:exoplayer:2.8.0'
     r2_8_0_adsApi 'org.checkerframework:checker-qual:2.5.0'
+    r2_9_6Api 'com.google.android.exoplayer:exoplayer:2.9.6'
+    r2_9_6Api 'org.checkerframework:checker-qual:2.5.0'
     compileOnly 'com.google.ads.interactivemedia.v3:interactivemedia:3.9.0'
     compileOnly 'com.google.android.gms:play-services-ads:15.0.1'
     api files('libs/MuxCore.jar')
